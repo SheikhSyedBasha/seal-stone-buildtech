@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import bannerImg from '/seal_stone_banner.png'
-import logoImg from '/seal_stone_logo.png'
+const bannerImg = `${import.meta.env.BASE_URL}seal_stone_banner.png`
+const logoImg = `${import.meta.env.BASE_URL}seal_stone_logo.png`
 
 const links = [
   { label: 'About',        id: 'about' },
