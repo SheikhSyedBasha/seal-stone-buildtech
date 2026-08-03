@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Montserrat', sans-serif;
+  --font-weight-100: 100;
+  --font-weight-200: 200;
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-800: 800;
+  --font-weight-900: 900;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #ffffff;
+    color: #111827;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection { background: #16a34a; color: white; }
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #16a34a; border-radius: 4px; }
+}
+
+/* Reusable utility classes — Sri Radhe style */
+@layer components {
+  .btn-primary {
+    @apply bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:shadow-lg;
+    transition: background-color 200ms ease-out, box-shadow 200ms ease-out, transform 200ms ease-out;
+    will-change: transform;
+    &:hover { transform: translateY(-1px); }
+    &:active { transform: scale(0.97); }
+  }
+  .btn-secondary {
+    @apply border border-green-600 text-green-700 hover:bg-green-600 hover:text-white bg-white px-6 py-3 rounded-full font-semibold hover:shadow-md;
+    transition: border-color 200ms ease-out, color 200ms ease-out, background-color 200ms ease-out, box-shadow 200ms ease-out, transform 200ms ease-out;
+    will-change: transform;
+    &:active { transform: scale(0.97); }
+  }
+  .card-hover {
+    transition: box-shadow 200ms ease-out, transform 200ms ease-out, border-color 200ms ease-out;
+    will-change: transform;
+    &:hover { box-shadow: 0 20px 40px -8px rgba(0,0,0,0.10); transform: translateY(-3px); }
+  }
+  .section-label {
+    @apply inline-flex items-center gap-2 text-green-600 text-xs font-700 tracking-[0.2em] uppercase mb-4;
+  }
+  .section-heading {
+    @apply text-gray-900 font-black mb-4;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+  .section-heading span {
+    background: linear-gradient(135deg, #15803d, #16a34a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glass {
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.5);
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+.fade-in        { animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards; }
+.animate-fade-in { animation: fadeIn 0.8s ease forwards; }
+.animate-marquee { animation: marquee 38s linear infinite; }
+.animate-float   { animation: float 3.5s ease-in-out infinite; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+.opacity-0-init { opacity: 0; }
