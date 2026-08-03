@@ -83,7 +83,7 @@ export default function Services() {
               { step: '2', title: 'Design',        desc: 'Detailed drawings and DBR preparation' },
               { step: '3', title: 'Execution',     desc: 'Site monitoring and quality control' },
               { step: '4', title: 'Handover',      desc: 'Final delivery with all documents' },
-            ].map((item, i) => (
+            ].map((item) => (
               <div key={item.step} className="flex items-center gap-3">
                 <div className="w-9 h-9 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-md shadow-green-600/20">
                   <span className="text-white font-800 text-sm">{item.step}</span>

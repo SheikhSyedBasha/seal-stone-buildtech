@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Phone, ArrowUp, X, MessageCircle } from 'lucide-react'
 
 
-export default function FloatingCTA({ onConsultClick }) {
+export default function FloatingCTA() {
   const [showTop, setShowTop]   = useState(false)
   const [chatOpen, setChatOpen] = useState(false)
   const chatRef = useRef(null)

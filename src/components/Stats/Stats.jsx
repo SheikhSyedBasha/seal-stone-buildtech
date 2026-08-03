@@ -27,26 +27,30 @@ function Counter({ value, suffix }) {
   return <span ref={ref}>{n}{suffix}</span>
 }
 
+function StatCard({ s, index }) {
+  const r = useScrollAnimation({ y: 0, delay: index * 0.08 })
+  return (
+    <div ref={r}
+      className="flex flex-col items-center justify-center py-10 px-6 text-center bg-green-950 hover:bg-green-900 transition-colors duration-300 group"
+    >
+      <i className={`fa-solid ${s.icon} text-green-500 text-lg mb-4 group-hover:scale-110 transition-transform duration-300`} />
+      <div className="text-4xl md:text-5xl font-900 text-white mb-2 tracking-tight" style={{ letterSpacing: '-0.04em' }}>
+        <Counter value={s.value} suffix={s.suffix} />
+      </div>
+      <p className="text-gray-500 text-xs font-500 tracking-widest uppercase">{s.label}</p>
+    </div>
+  )
+}
+
 export default function Stats() {
   const wrap = useScrollAnimation({ y: 20 })
   return (
     <section className="py-10 lg:py-12 bg-green-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={wrap} className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-3xl overflow-hidden border border-green-900/40">
-          {stats.map((s, i) => {
-            const r = useScrollAnimation({ y: 0, delay: i * 0.08 })
-            return (
-              <div key={s.label} ref={r}
-                className="flex flex-col items-center justify-center py-10 px-6 text-center bg-green-950 hover:bg-green-900 transition-colors duration-300 group"
-              >
-                <i className={`fa-solid ${s.icon} text-green-500 text-lg mb-4 group-hover:scale-110 transition-transform duration-300`} />
-                <div className="text-4xl md:text-5xl font-900 text-white mb-2 tracking-tight" style={{ letterSpacing: '-0.04em' }}>
-                  <Counter value={s.value} suffix={s.suffix} />
-                </div>
-                <p className="text-gray-500 text-xs font-500 tracking-widest uppercase">{s.label}</p>
-              </div>
-            )
-          })}
+          {stats.map((s, i) => (
+            <StatCard key={s.label} s={s} index={i} />
+          ))}
         </div>
       </div>
     </section>

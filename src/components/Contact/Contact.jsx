@@ -1,10 +1,4 @@
-import { useScrollAnimation } from '../../hooks/useScrollAnimation'
-
 export default function Contact() {
-  const head  = useScrollAnimation({ y: 20 })
-  const left  = useScrollAnimation({ x: -25, delay: 0.1 })
-  const right = useScrollAnimation({ x:  25, delay: 0.15 })
-
   const year = new Date().getFullYear()
   const go = id => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 

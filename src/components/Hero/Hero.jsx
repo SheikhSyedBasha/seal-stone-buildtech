@@ -141,7 +141,7 @@ export default function Hero({ onConsultClick }) {
               { value: '200+', label: 'Projects' },
               { value: '10+',  label: 'Years' },
               { value: '150+', label: 'Families' },
-            ].map((s, i) => (
+            ].map((s) => (
               <div key={s.label} className="text-center">
                 <div className="text-lg font-black text-gray-900" style={{ letterSpacing: '-0.03em' }}>{s.value}</div>
                 <div className="text-[11px] text-gray-400 font-500 tracking-wide">{s.label}</div>

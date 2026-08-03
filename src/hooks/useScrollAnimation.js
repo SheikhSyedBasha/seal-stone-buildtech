@@ -2,14 +2,15 @@ import { useEffect, useRef } from 'react'
 
 export function useScrollAnimation(options = {}) {
   const ref = useRef(null)
+  const { y = 16, x = 0, duration = 0.6, delay = 0 } = options
 
   useEffect(() => {
     const el = ref.current
     if (!el) return
 
     el.style.opacity = '0'
-    el.style.transform = `translateY(${options.y ?? 16}px) translateX(${options.x ?? 0}px)`
-    el.style.transition = `opacity ${options.duration ?? 0.6}s cubic-bezier(0.16,1,0.3,1) ${options.delay ?? 0}s, transform ${options.duration ?? 0.6}s cubic-bezier(0.16,1,0.3,1) ${options.delay ?? 0}s`
+    el.style.transform = `translateY(${y}px) translateX(${x}px)`
+    el.style.transition = `opacity ${duration}s cubic-bezier(0.16,1,0.3,1) ${delay}s, transform ${duration}s cubic-bezier(0.16,1,0.3,1) ${delay}s`
 
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -21,7 +22,7 @@ export function useScrollAnimation(options = {}) {
 
     observer.observe(el)
     return () => observer.disconnect()
-  }, [])
+  }, [y, x, duration, delay])
 
   return ref
 }

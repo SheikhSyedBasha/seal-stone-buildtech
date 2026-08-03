@@ -9,6 +9,23 @@ const reasons = [
   { icon: 'fa-headset',             title: 'Dedicated Support',    desc: 'Our team is always available to answer queries and provide updates.' },
 ]
 
+function ReasonCard({ r, index }) {
+  const ref = useScrollAnimation({ y: 25, delay: (index % 3) * 0.08 })
+  return (
+    <div ref={ref}
+      className="flex gap-4 p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:border-green-200 hover:bg-white hover:shadow-lg hover:shadow-green-500/5 group transition-all duration-200"
+    >
+      <div className="w-10 h-10 rounded-xl bg-white group-hover:bg-green-600 flex items-center justify-center flex-shrink-0 border border-gray-100 transition-colors duration-200 shadow-sm">
+        <i className={`fa-solid ${r.icon} text-green-600 group-hover:text-white text-sm transition-colors duration-200`} />
+      </div>
+      <div>
+        <h4 className="font-700 text-gray-900 mb-1.5 text-sm">{r.title}</h4>
+        <p className="text-gray-400 text-xs leading-relaxed">{r.desc}</p>
+      </div>
+    </div>
+  )
+}
+
 export default function WhyUs() {
   const badge = useScrollAnimation({ y: 20 })
   const head  = useScrollAnimation({ y: 30, delay: 0.1 })
@@ -28,22 +45,9 @@ export default function WhyUs() {
           </span>
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {reasons.map((r, i) => {
-            const ref = useScrollAnimation({ y: 25, delay: (i % 3) * 0.08 })
-            return (
-              <div key={r.title} ref={ref}
-                className="flex gap-4 p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:border-green-200 hover:bg-white hover:shadow-lg hover:shadow-green-500/5 group transition-all duration-200"
-              >
-                <div className="w-10 h-10 rounded-xl bg-white group-hover:bg-green-600 flex items-center justify-center flex-shrink-0 border border-gray-100 transition-colors duration-200 shadow-sm">
-                  <i className={`fa-solid ${r.icon} text-green-600 group-hover:text-white text-sm transition-colors duration-200`} />
-                </div>
-                <div>
-                  <h4 className="font-700 text-gray-900 mb-1.5 text-sm">{r.title}</h4>
-                  <p className="text-gray-400 text-xs leading-relaxed">{r.desc}</p>
-                </div>
-              </div>
-            )
-          })}
+          {reasons.map((r, i) => (
+            <ReasonCard key={r.title} r={r} index={i} />
+          ))}
         </div>
       </div>
     </section>

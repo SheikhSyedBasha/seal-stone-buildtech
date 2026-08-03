@@ -9,6 +9,23 @@ const points = [
   { icon: 'fa-file-signature', title: 'On-Time Delivery',  text: 'Handover on schedule with all signed documents. No delays.' },
 ]
 
+function PointCard({ p, index }) {
+  const r = useScrollAnimation({ y: 16, delay: index * 0.05 })
+  return (
+    <div ref={r}
+      className="flex items-start gap-3 p-3.5 bg-gray-50 rounded-xl border border-gray-100 hover:border-green-200 hover:bg-white transition-all duration-200 group"
+    >
+      <div className="w-8 h-8 rounded-lg bg-white group-hover:bg-green-600 flex items-center justify-center flex-shrink-0 border border-gray-100 transition-colors duration-200">
+        <i className={`fa-solid ${p.icon} text-green-600 group-hover:text-white text-xs transition-colors duration-200`} />
+      </div>
+      <div>
+        <h4 className="font-700 text-gray-800 text-xs mb-0.5">{p.title}</h4>
+        <p className="text-gray-400 text-[11px] leading-relaxed">{p.text}</p>
+      </div>
+    </div>
+  )
+}
+
 export default function About() {
   const left  = useScrollAnimation({ x: -30, delay: 0.1 })
   const right = useScrollAnimation({ x:  30, delay: 0.15 })
@@ -69,22 +86,9 @@ export default function About() {
             </p>
 
             <div className="grid grid-cols-2 gap-3">
-              {points.map((p, i) => {
-                const r = useScrollAnimation({ y: 16, delay: i * 0.05 })
-                return (
-                  <div key={i} ref={r}
-                    className="flex items-start gap-3 p-3.5 bg-gray-50 rounded-xl border border-gray-100 hover:border-green-200 hover:bg-white transition-all duration-200 group"
-                  >
-                    <div className="w-8 h-8 rounded-lg bg-white group-hover:bg-green-600 flex items-center justify-center flex-shrink-0 border border-gray-100 transition-colors duration-200">
-                      <i className={`fa-solid ${p.icon} text-green-600 group-hover:text-white text-xs transition-colors duration-200`} />
-                    </div>
-                    <div>
-                      <h4 className="font-700 text-gray-800 text-xs mb-0.5">{p.title}</h4>
-                      <p className="text-gray-400 text-[11px] leading-relaxed">{p.text}</p>
-                    </div>
-                  </div>
-                )
-              })}
+              {points.map((p, i) => (
+                <PointCard key={p.title} p={p} index={i} />
+              ))}
             </div>
           </div>
 
