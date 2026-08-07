@@ -1,7 +1,7 @@
 import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 
 const team = [
-  { name: 'Vinay Kumar S', role: 'Proprietor & Structural Engineer', initial: 'VK', bio: 'Completed M.Tech in Industrial Structures from SJCE Mysore in 2004. Worked at organisations like ISRO and Potential Service Consultants Pvt. Ltd. for more than a decade as a Structural Designer.', skills: ['Structural Design', 'M.Tech', 'ISRO', '15+ Yrs'] },
+  { name: 'Vinay Kumar S', role: 'Director & Structural Engineer', initial: 'VK', bio: 'Completed M.Tech in Industrial Structures from SJCE Mysore in 2004. Worked at organisations like ISRO and Potential Service Consultants Pvt. Ltd. for more than a decade as a Structural Designer.', skills: ['Structural Design', 'M.Tech', 'ISRO', '15+ Yrs'] },
   { name: 'Bharath Kumar', role: 'Civil Engineer',                   initial: 'BK', bio: 'Completed B.E in Civil Engineering in 2018. Works with innovative thinking to deliver quality structural solutions.', skills: ['B.E Civil', 'Structural', 'Site Work', 'Innovative'] },
   { name: 'Abinay B S',   role: 'CADD & BIM Specialist',            initial: 'AB', bio: 'Completed Diploma in Civil in 2006. Worked at organisations like Potential and Design Tree Service Consultants. Professional experience of more than 10 years in CADD and Revit software.', skills: ['CADD', 'Revit', 'AutoCAD', '10+ Yrs'] },
 ]

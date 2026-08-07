@@ -1,8 +1,9 @@
 import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 
+
 const projects = [
-  { type: 'Residential', title: 'G+3 Apartment Complex',    location: 'BSK, Bangalore',        floors: 'G+3',    area: '4,200 sqft',  image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500&q=80&auto=format&fit=crop' },
-  { type: 'Commercial',  title: 'Multi-storey Office Block', location: 'Jayanagar, Bangalore',   floors: 'G+5',    area: '12,000 sqft', image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=500&q=80&auto=format&fit=crop' },
+  { type: 'Commercial', title: 'Commercial Building',    location: 'Kanakapura road, Bangalore',        floors: 'B+G+4',    area: '18,000 sqft',  image: './nagaraja_commercial_building.jpeg' },
+  { type: 'Commercial',  title: 'Commercial Building', location: 'Andhrahalli, Bangalore',   floors: 'B+G+4',    area: '22,000 sqft', image: './srinivas_commercial_building.jpeg' },
   { type: 'Industrial',  title: 'Warehouse & Factory',       location: 'Peenya, Bangalore',      floors: 'Single', area: '25,000 sqft', image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80&auto=format&fit=crop' },
   { type: 'Residential', title: 'Villa Development',         location: 'Whitefield, Bangalore',  floors: 'G+1',    area: '3,600 sqft',  image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=500&q=80&auto=format&fit=crop' },
   { type: 'Commercial',  title: 'Retail Shopping Complex',   location: 'Mysore Road, Bangalore', floors: 'G+2',    area: '8,500 sqft',  image: 'https://images.unsplash.com/photo-1555636222-cae831e670b3?w=500&q=80&auto=format&fit=crop' },
@@ -64,7 +65,7 @@ export default function Projects({ onConsultClick }) {
             Projects That <span>Speak for Themselves</span>
           </h2>
           <p className="text-gray-500 text-sm max-w-xl mx-auto">
-            Completed projects across Bangalore — residential, commercial and industrial
+            Completed & Running Projects across Bangalore — residential, commercial and industrial
           </p>
         </div>
 

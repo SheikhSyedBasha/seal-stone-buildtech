@@ -69,9 +69,9 @@ export default function About() {
             {/* Founder quote */}
             <div className="bg-green-50 border-l-4 border-green-500 rounded-r-xl px-4 py-3">
               <p className="text-green-900 text-xs leading-relaxed italic">
-                "Every family deserves a home built with honesty, quality and care — from the first drawing to the final handover."
+                "Every family deserves a building built with honesty, quality and care — from the first drawing to the final handover."
               </p>
-              <p className="text-green-700 text-[11px] font-700 mt-1.5">— Vinay Kumar S, Proprietor & Structural Engineer</p>
+              <p className="text-green-700 text-[11px] font-700 mt-1.5">— Vinay Kumar S, Director & Structural Engineer</p>
             </div>
           </div>
 
