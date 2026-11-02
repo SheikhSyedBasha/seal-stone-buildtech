@@ -7,5 +7,5 @@ export default defineConfig({
   // GitHub Pages serves this repo as a project page under /seal-stone-buildtech/
   // (repo is not <user>.github.io). A base of '/' makes the browser request
   // /assets/* from the domain root -> 404. Use the repo sub-path instead.
-  base: '/seal-stone-buildtech/',
+  base: '',
 })
